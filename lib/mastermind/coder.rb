@@ -1,9 +1,18 @@
 module Mastermind
 	class Coder < Player
 		def generate_code
-			puts "please enter 4 letters in r, b, g, y, o, p seperated by spaces"
+			code = []
+			4.times do
+				code << rand(1..6).to_s
+			end
+			code
+		end
+
+		def manual_code
+			puts "please enter 4 letters in 1, 2, 3, 4, 5, 6 seperated by spaces"
 			code = gets.chomp.split(" ")
 		end
+
 
 		def generate_peg(board)
 			guess = board.last_guess.value
